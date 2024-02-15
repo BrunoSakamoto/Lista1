@@ -10,7 +10,7 @@ public class Main {
         System.out.println("Digite a nota N2: ");
         double N2 = scanner.nextDouble();
 
-        double media = (N1 * 1 + N2 * 2) /3;
+        double media = (N1 + N2 * 2) /3;
 
         System.out.println("A media dessas duas notas é: " + media);
 
