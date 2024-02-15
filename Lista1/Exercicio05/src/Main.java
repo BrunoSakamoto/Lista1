@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Escreva uma velocidade em Km/h: ");
         number = in.nextInt();
         result = number / 3.6;
-        System.out.println("Essa velocidade em m/s é: " + result);
+        System.out.println(number+ "km/h em m/s é: " + result +"m/s");
 
 
 
