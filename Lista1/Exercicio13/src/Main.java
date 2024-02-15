@@ -8,7 +8,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         System.out.println("Escreva o raio de um circulo: ");
         number = in.nextInt();
-        result = (number * number) * 3.14;
+        result = (number * number) * Math.PI;
         System.out.println("A area desse circulo é: " + result);
     }
 }

@@ -18,6 +18,5 @@ public class Main {
             System.out.println("Erro: o resultado deve estar entre 0 e 10.");
         }
 
-        scanner.close();
     }
 }
