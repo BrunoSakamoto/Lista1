@@ -9,6 +9,6 @@ public class Main {
         System.out.println("Escreva uma medida em mm: ");
         number = in.nextInt();
         result = number / 25.4;
-        System.out.println("Essa medida em polegadas é: " + result);
+        System.out.println(number+ "mm em polegadas é: " + result);
     }
 }
