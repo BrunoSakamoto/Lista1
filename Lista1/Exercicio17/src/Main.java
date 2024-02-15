@@ -5,11 +5,17 @@ public class Main {
 
         double number1, number2, number3, result;
         Scanner in = new Scanner(System.in);
-        System.out.println("Escreva a velocidade inicial, a aceleração e o tempo de percurso: ");
+
+        System.out.println("Escreva a velocidade inicial (km/h):");
         number1 = in.nextInt();
+
+        System.out.println("Escreva a aceleração (km/h):");
         number2 = in.nextInt();
+
+        System.out.println("Escreva o tempo de percurso em horas:");
         number3 = in.nextInt();
+
         result = number1 + (number2 * number3);
-        System.out.println("O a velocidade final é: " + result);
+        System.out.println("A velocidade final é: " + result+ "km/h");
     }
 }
