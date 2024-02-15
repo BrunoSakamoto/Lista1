@@ -9,6 +9,6 @@ public class Main {
         System.out.println("Escreva uma temperatura em Graus Celsius: ");
         number = in.nextInt();
         result = number * 1.8 + 32;
-        System.out.println("Essa temperatura em Graus Fahrenheit é: " + result);
+        System.out.println(number+ " C° em Graus Fahrenheit é: " + result);
     }
 }
