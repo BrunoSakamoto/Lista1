@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Escreva a altura de um cone: ");
         number2 = in.nextInt();
 
-        result = ((number1 * number1) * number2 * 3.14) / 3;
+        result = ((number1 * number1) * number2 * Math.PI) / 3;
         System.out.println("O volume desse cone é: " + result);
     }
 }
