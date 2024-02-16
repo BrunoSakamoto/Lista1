@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Escreva a base e a altura de um triângulo retângulo: ");
         number1 = in.nextInt();
         number2 = in.nextInt();
-        result = (number1 + number2) / 2;
+        result = (number1 * number2) / 2;
         System.out.println("A area desse triângulo é: " + result);
     }
 }
