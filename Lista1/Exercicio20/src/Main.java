@@ -14,7 +14,7 @@ public class Main {
         double b = -(x1 + x2);
         double c = x1 * x2;
 
-        System.out.println("A equação do segundo grau é: " + a + "x^2 +" + b + "x + " + c+ "= 0");
+        System.out.println("A equação do segundo grau é: " + a + "x² +" + b + "x + " + c+ "= 0");
 
     }
 }
