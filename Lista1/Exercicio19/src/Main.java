@@ -1,18 +1,18 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
         System.out.println("Escreva o coeficiente A: ");
-        double A = scanner.nextDouble();
+        double A = in.nextDouble();
 
         System.out.println("Escreva o coeficiente B: ");
-        double B = scanner.nextDouble();
+        double B = in.nextDouble();
 
         System.out.println("Escreva o coeficiente C: ");
-        double C = scanner.nextDouble();
+        double C = in.nextDouble();
 
-        double delta = (B * B) - 4 * A * C;
+        double delta = Math.pow(B,2) - 4 * A * C;
 
         if (delta > 0) {
             double x1 = (-B + Math.sqrt(delta)) / (2 * A);
