@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Escreva o raio e a altura de um cilindro: ");
         number1 = in.nextInt();
         number2 = in.nextInt();
-        result = (number1 * number1) * number2 * 3.14;
+        result = (number1 * number1) * number2 * Math.PI;
         System.out.println("O volume desse cilindro é: " + result);
     }
 }
