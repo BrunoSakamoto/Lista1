@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
         System.out.println("Escreva o coeficiente A: ");
-        double A = scanner.nextDouble();
+        double A = in.nextDouble();
 
         System.out.println("Escreva o coeficiente B: ");
-        double B = scanner.nextDouble();
+        double B = in.nextDouble();
 
         if (A == 0) {
             System.out.println("Esta não é uma equação do 1º grau");
@@ -16,7 +16,7 @@ public class Main {
 
             double solucao = -B / A ;
 
-            System.out.println("A solução da equação é x = " + solucao);
+            System.out.println(A+ "x + (" + B +") = 0, então, x =" +solucao);
 
         }
     }
