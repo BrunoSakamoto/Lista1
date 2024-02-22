@@ -1,0 +1,66 @@
+int vermelho = 3;
+int amarelo = 4;
+int verde = 5;
+int tempo_intermitente = 1000;
+
+int botao = 2;
+
+int tempo_setup = 5000;
+int tempo_setup2 = 3000;
+int tempo_setup3 = 8000;
+
+int verde2 = 6;
+int vermelho2 = 7;
+
+bool estadobotao = 0;
+
+void setup(){
+    //Determina que os pinos 3,4,5 serão saídas.
+    pinMode(vermelho, OUTPUT);
+    pinMode(amarelo, OUTPUT);
+    pinMode(verde, OUTPUT);
+    pinMode(botao, INPUT);
+  	pinMode(verde2, OUTPUT);
+  	pinMode(vermelho2, OUTPUT);
+
+    digitalWrite(amarelo, 1);
+  	delay(1000);
+    digitalWrite(amarelo, 0);
+  	delay(1000);
+    digitalWrite(amarelo, 1);
+  	delay(1000);
+  	digitalWrite(amarelo, 0);
+  	delay(1000);
+  	digitalWrite(amarelo, 1);
+  	delay(1000);
+  	digitalWrite(amarelo, 0);
+  	delay(1000);
+  	
+
+}
+
+void loop(){	
+  
+  	digitalWrite(vermelho, 1);
+    digitalWrite(verde2, 1);
+	delay(tempo_setup);
+  	digitalWrite(verde2, 0);
+  	digitalWrite(vermelho2, 1);
+  	delay(1000);
+  	digitalWrite(vermelho2, 0);
+  	delay(1000);
+	digitalWrite(vermelho,0);
+  
+	digitalWrite(verde, 1);
+  	digitalWrite(verde2, 0);
+  	digitalWrite(vermelho2, 1);
+	delay(tempo_setup);
+  	digitalWrite(verde,0);
+  
+ 	digitalWrite(amarelo, 1);
+  	digitalWrite(vermelho2, 1);
+  	delay(tempo_setup2);
+  	digitalWrite(amarelo, 0);
+  	digitalWrite(vermelho2, 0);
+ 
+  }
