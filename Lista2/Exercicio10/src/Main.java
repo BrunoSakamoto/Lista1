@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-
         System.out.println("Digite um número: ");
         int N1 = in.nextInt();
 
@@ -13,7 +12,6 @@ public class Main {
 
         System.out.println("Digite outro número ");
         int N3 = in.nextInt();
-
 
 
     }
