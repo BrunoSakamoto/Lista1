@@ -20,22 +20,25 @@ public class Main {
 
             case 1:
                 System.out.println("Débito selecionado");
-                System.out.println("Valor final da compra = " +(compra * 0.95));
+                System.out.println("Valor final da compra = " + (compra * 0.95) + "R$");
 
             case 2:
                 System.out.println("PIX selecionado");
-                System.out.println("Valor final da compra = " +(compra * 0.9));
+                System.out.println("Valor final da compra = " + (compra * 0.9) + "R$");
 
             case 3:
-                System.out.println("Crédito selecionado)");
+                System.out.println("Crédito selecionado");
                 System.out.println("Informe a quantidade de parcelas:");
                 int parc = in.nextInt();
 
                 if (parc <= 4) {
-                    System.out.println("O valor final da compra é " +((compra / parc)));
+                    System.out.println("O valor final da compra é " + ((compra / parc) + compra * 0.02) * parc);
+
+                } else {
+                    System.out.println("O valor final da compra é: "+ ((compra / parc) + compra * 0.05) * parc);
+
                 }
+
         }
-
-
     }
 }
