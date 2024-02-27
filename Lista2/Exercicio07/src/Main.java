@@ -27,7 +27,7 @@ public class Main {
             System.out.println("A solução dessa equação é " +x);
 
         } else {
-            System.out.println("A euação não possui soluções reais.");
+            System.out.println("A equação não possui soluções reais.");
         }
     }
 }
