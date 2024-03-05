@@ -32,10 +32,10 @@ public class Main {
                 int parc = in.nextInt();
 
                 if (parc <= 4) {
-                    System.out.println("O valor final da compra é " + ((compra / parc) + compra * 0.02) * parc);
+                    System.out.println("O valor final da compra é " + (compra + compra * 0.02));
 
                 } else {
-                    System.out.println("O valor final da compra é: "+ ((compra / parc) + compra * 0.05) * parc);
+                    System.out.println("O valor final da compra é: "+ (compra+ compra * 0.05));
 
                 }
 

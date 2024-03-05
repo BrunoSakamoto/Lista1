@@ -1,30 +1,34 @@
 import java.util.Scanner;
-import java.util.Arrays;
-
 
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
+        int menor, meio, maior, aux;
+        System.out.println("Digite três números inteiros: ");
 
-        System.out.println("Digite um número: ");
-        double N1 = in.nextDouble();
+        maior = in.nextInt();
+        meio = in.nextInt();
+        menor = in.nextInt();
 
+        if (maior < menor) {
+            aux = menor;
+            menor = maior;
+            maior = aux;
+        }
 
-        System.out.println("Digite outro número:");
-        double N2 = in.nextDouble();
+        if (maior < meio) {
+            aux = meio;
+            meio = maior;
+            maior = aux;
+        }
 
+        if (meio < menor) {
+            aux = menor;
+            menor = meio;
+            meio = aux;
+        }
 
-        System.out.println("Digite outro número: ");
-        double N3 = in.nextDouble();
-
-
-        double [] numeros = {N1,N2,N3};
-
-
-        Arrays.sort(numeros);
-
-
-        System.out.println("Esses números em ordem crescente são: " + Arrays.toString(numeros));
+        System.out.println("Esses números em ordem crescente são: " +menor+ " " +meio+ " " +maior);
     }
 }
