@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background-color: rgb(154, 250, 218);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .sub-section {
+            margin-top: 10px;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+    </style>
+    <title>Currículo</title>
+</head>
+<body>
+    <div class="container"
+    <header>
+        <img src="data:image/jpeg;base64,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"alt="Sua Foto">
+        <h1>Bruno Araújo Sakamoto</h1>
+    </header>
+
+    <section class="section">
+        <h2>Informações</h2>
+        <p>22//07/2005 - 18 anos</p>
+        <p>Email: brunosakar2005@gmail.com</p>
+        <p>Telefone: (15) 981370624</p>
+        <p>Endereço: R. José Martinez Peres - 782, Parque Vitória Regia, Sorocaba - SP</p>
+        <p></p>
+    </section>
+
+    <section class="section">
+        <h2>Educação</h2>
+        <div class="sub-section">
+            <p>Ensino Médio Completo - Colégio Politécnico de Sorocaba</p>
+            <p>Período: 2021 - 2023</p>
+            <p>Curso: Técnico em Redes de Computadores - SENAC</p>
+            <p>Período: 2022 - 2023</p>
+            <p>Curso: Análise e Desenvolvimento de Sistemas - SENAI</p>
+            <p>Período: 2024 - Presente</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Experiência Profissional</h2>
+        <div class="sub-section">
+            <h3>Empresa 2RP - NET</h3>
+            <p>Cargo: Estagiário</p>
+            <p>Período: 2024 - Presente</p>
+        </div>
+    </section>
+
+</body>
+</html>
