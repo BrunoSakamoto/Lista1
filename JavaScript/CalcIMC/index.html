@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        .cabecalho {
+            width: 100%;
+            height: 120px;
+            background-color: #4072A0;
+            text-align: center;
+            font-size: 50px;
+        }
+        
+        .conteudo {
+            width: calc(100%-220px);
+            height: calc(100vh - 160px);
+            bottom: 40px;
+            background-color: #83EFE9;
+            text-align: center;
+            font-size: x-large;
+        
+        }
+
+        .rodape {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            height: 40px;
+            background-color: #000000;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="cabecalho"> CALCULADORA IMC</div>
+    <div class="conteudo"> Peso (kg)<p> <input type="number" maxlength="6" style="resize: none;" name="" cols="20" rows="2"> </input> <p>
+         <p>Altura (m)<p> <p><input type="number" maxlength="5" style="resize: none;" name="" cols="20" rows="2"> </input><p>
+            <p><h3>RESULTADO<h3><p>
+                <p><button> CALCULAR IMC </button></p>
+         </div>
+    <div class="rodape">FOOTER</div> 
+    <footer>
+        Copyright &copy; 2024
+    </footer>
+
+    <script>
+        function calcular () {
+
+            var Peso = domcument-getElementById("iPeso").value
+            var Altura = document-getElementById("iAltura").value
+            var IMC = peso / (altura * altura)
+            alert (IMC)
+        }
+
+    </script>
+</body>
+</html>
