@@ -5,13 +5,12 @@ public class Main {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Digite um número: ");
-        int i = 1;
         int num = in.nextInt();
-        System.out.println("Tabuada do " + num);
-        while (i <= 10) {
-            System.out.println(num + " x " + i + " = " + i * num);
-            i++;
+        int result = 1;
 
+        for (int i =1; i<=num; i++) {
+            result *= i;
         }
+        System.out.println("O fatorial de " +num+ " é: " +result);
     }
 }
