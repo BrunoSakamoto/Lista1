@@ -16,7 +16,6 @@ public class Main {
                     System.out.println("Deseja tentar novamente? (Digite 1 para SIM e 2 para NÃO)");
                     int resp = in.nextInt();
                     if (resp == 1) {
-                        System.out.println("Tabuada do " + i + ":");
 
                     } else if (resp == 2) {
                         System.out.println("Jogo encerrado!");
