@@ -1,0 +1,808 @@
+Ex.1
+
+int dict [][2] = {{0B00000000, 0},
+				  {0B11111111, 8}};
+
+int botao = 2;
+int a = 3;
+int b = 4;
+int c = 5;
+int d = 6;
+int e = 7;
+int f = 8;
+int g = 9;
+
+int contador = 0;
+int incremento = 0;
+int segmentos [] = {a,b,c,d,e,f,g};
+
+bool ultimoEstadoBotao = LOW;
+bool contadorAtivo = false;
+
+
+int search(int n){
+  for(int i=0;i<2;i++){
+  	if (dict[i][1]==n)
+      return dict[i][0];
+  }
+  return 0;
+}
+
+//Void Setup
+void setup(){
+    pinMode(botao, INPUT);
+
+    for(contador; contador <=9 ; contador++){
+        pinMode(contador, OUTPUT);
+    }
+
+    Serial.begin(9600);
+
+}
+
+void loop() {
+  bool estadoBotao = digitalRead(botao);
+
+  if (estadoBotao == HIGH && ultimoEstadoBotao == LOW) {
+    contadorAtivo = !contadorAtivo; 
+    delay(50); 
+  }
+
+  ultimoEstadoBotao = estadoBotao;
+
+  if (contadorAtivo) {
+    incremento++;
+    if (incremento > 9) {
+      incremento = 0; 
+    }
+    delay(500);
+  }
+
+  ligaLeds(incremento);
+}
+
+void ligaLeds(int numero){
+
+    switch (numero) {
+      case 0: 
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, LOW);
+      break;
+     
+      case 1:
+      digitalWrite(a, LOW);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, LOW);
+      digitalWrite(e, LOW);
+      digitalWrite(f, LOW);
+      digitalWrite(g, LOW);
+      break;
+      
+      case 2:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, LOW);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, LOW);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 3:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, LOW);
+      digitalWrite(f, LOW);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 4:
+      digitalWrite(a, LOW);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, LOW);
+      digitalWrite(e, LOW);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 5:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, LOW);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, LOW);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 6:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, LOW);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 7:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, LOW);
+      digitalWrite(e, LOW);
+      digitalWrite(f, LOW);
+      digitalWrite(g, LOW);
+      break;
+      
+      case 8:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 9:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, LOW);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+    	
+    }
+}
+
+Ex.2
+
+int dict [][2] = {{0B00000000, 0},
+				  {0B11111111, 8}};
+
+int botao = 2;
+int a = 3;
+int b = 4;
+int c = 5;
+int d = 6;
+int e = 7;
+int f = 8;
+int g = 9;
+
+int contador = 0;
+int incremento = 0;
+int segmentos [] = {a,b,c,d,e,f,g};
+
+bool ultimoEstadoBotao = LOW;
+bool contadorAtivo = false;
+
+
+int search(int n){
+  for(int i=0;i<2;i++){
+  	if (dict[i][1]==n)
+      return dict[i][0];
+  }
+  return 0;
+}
+
+//Void Setup
+void setup(){
+    pinMode(botao, INPUT);
+
+    for(contador; contador <=9 ; contador++){
+        pinMode(contador, OUTPUT);
+    }
+
+    Serial.begin(9600);
+
+}
+
+void loop() {
+  bool estadoBotao = digitalRead(botao);
+
+  if (estadoBotao == HIGH && ultimoEstadoBotao == LOW) {
+    contadorAtivo = !contadorAtivo; 
+    delay(50); 
+  }
+
+  ultimoEstadoBotao = estadoBotao;
+
+  if (contadorAtivo) {
+    incremento++;
+    if (incremento > 9) {
+      incremento = 0; 
+    }
+    delay(500);
+  }
+
+  ligaLeds(incremento);
+}
+
+void ligaLeds(int numero){
+
+    switch (numero) {
+      case 0: 
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, LOW);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+     
+      case 1:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 2:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, LOW);
+      digitalWrite(e, LOW);
+      digitalWrite(f, LOW);
+      digitalWrite(g, LOW);
+      break;
+      
+      case 3:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, LOW);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 4:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, LOW);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, LOW);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 5:
+      digitalWrite(a, LOW);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, LOW);
+      digitalWrite(e, LOW);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 6:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, LOW);
+      digitalWrite(f, LOW);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 7:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, LOW);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, LOW);
+      digitalWrite(g, HIGH);
+      break;
+      
+      case 8:
+      digitalWrite(a, LOW);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, LOW);
+      digitalWrite(e, LOW);
+      digitalWrite(f, LOW);
+      digitalWrite(g, LOW);
+      break;
+      
+      case 9:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, LOW);
+      break;
+    	
+    }
+}
+
+Ex. 3
+
+int dict[][2] = {{0B00000000, 0},
+                  {0B11111111, 8}};
+
+int botao = 2;
+int a = 3;
+int b = 4;
+int c = 5;
+int d = 6;
+int e = 7;
+int f = 8;
+int g = 9;
+
+int contador = 0;
+int incremento = 0;
+int segmentos[] = {a, b, c, d, e, f, g};
+
+bool ultimoEstadoBotao = LOW;
+bool contadorAtivo = false;
+bool incrementando = true; 
+
+int search(int n)
+{
+    for (int i = 0; i < 2; i++)
+    {
+        if (dict[i][1] == n)
+            return dict[i][0];
+    }
+    return 0;
+}
+
+void setup()
+{
+    pinMode(botao, INPUT);
+
+    for (contador; contador <= 9; contador++)
+    {
+        pinMode(contador, OUTPUT);
+    }
+
+    Serial.begin(9600);
+}
+
+void loop()
+{
+    bool estadoBotao = digitalRead(botao);
+
+    if (estadoBotao == HIGH && ultimoEstadoBotao == LOW)
+    {
+        contadorAtivo = !contadorAtivo;
+        delay(50);
+    }
+
+    ultimoEstadoBotao = estadoBotao;
+
+    if (contadorAtivo)
+    {
+        if (incrementando)
+        {
+            incremento++;
+            if (incremento > 9)
+            {
+                incrementando = false; 
+                incremento = 8; 
+            }
+        }
+        else
+        {
+            incremento--;
+            if (incremento < 0)
+            {
+                incrementando = true; 
+                incremento = 1; 
+            }
+        }
+        delay(500);
+    }
+
+    ligaLeds(incremento);
+}
+
+void ligaLeds(int numero)
+{
+
+    switch (numero)
+    {
+    case 0:
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, LOW);
+        break;
+
+    case 1:
+        digitalWrite(a, LOW);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, LOW);
+        break;
+
+    case 2:
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, LOW);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, LOW);
+        digitalWrite(g, HIGH);
+        break;
+
+    case 3:
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, HIGH);
+        break;
+
+    case 4:
+        digitalWrite(a, LOW);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        break;
+
+    case 5:
+        digitalWrite(a, HIGH);
+        digitalWrite(b, LOW);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, LOW);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        break;
+
+    case 6:
+        digitalWrite(a, HIGH);
+        digitalWrite(b, LOW);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        break;
+
+    case 7:
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, LOW);
+        break;
+
+    case 8:
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        break;
+
+    case 9:
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, LOW);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        break;
+    }
+}
+
+
+Ex.4
+
+int ledCount = 3;
+int led[] = {3, 4, 5};
+
+void setup() {
+  for (int i = 0; i < ledCount; i++) {
+    pinMode(led[i], OUTPUT);
+  }
+}
+
+void loop() {
+  int interval = 5;
+
+  for (int i = 0; i < ledCount; i++) {
+    digitalWrite(led[i], HIGH); 
+    delay(interval); 
+
+    digitalWrite(led[i], LOW); 
+    delay(interval); 
+
+    interval *= 1.15;
+    if (interval > 5000) { 
+      interval = 5000;
+    }
+  }
+}
+
+
+
+Ex.5 
+
+const int ledCount = 3;
+int ledPins[] = {3, 4, 5};
+
+void setup() {
+  for (int i = 0; i < ledCount; i++) {
+    pinMode(ledPins[i], OUTPUT);
+  }
+}
+
+void loop() {
+ 
+  int interval = 5000;
+
+ 
+  for (int i = 0; i < ledCount; i++) {
+    digitalWrite(ledPins[i], HIGH);
+    delay(interval); 
+    digitalWrite(ledPins[i], LOW); 
+     
+
+    interval *= 0.8;
+    if (interval < 5) { 
+      interval = 5;
+    }
+  }
+}
+
+
+
+Ex.6
+
+int vermelho = 3;
+int amarelo = 4;
+int verde = 5;
+int tempo_intermitente = 1000;
+int botao = 2;
+
+void setup(){
+    pinMode(vermelho, OUTPUT);
+    pinMode(amarelo, OUTPUT);
+    pinMode(verde, OUTPUT);
+  	pinMode(botao, INPUT);
+
+}
+
+void loop(){
+  
+  	bool estadoBotao = false;
+  	estadoBotao = digitalRead(botao);
+      
+  	controlaCor(vermelho, 2000, true);
+    controlaCor(verde, 2000, true);
+    controlaCor(amarelo, 2000, true);
+
+}
+
+int controlaCor (int cor, int tempo, bool esta_no_loop) {
+    digitalWrite(cor, 1);
+    delay(tempo);
+    digitalWrite(cor, 0);
+    
+    if(esta_no_loop == false){
+        delay(tempo);
+        return 0;
+    }
+    else{
+        return 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+Ex.7
+
+int botao = 6;
+int led = 4;
+
+int estadoBotao = 0;
+int botaoClick = 0;
+int clicks = 0;
+
+unsigned long lastDebounceTime = 0;
+
+const int debounceDelay = 50;
+
+unsigned long ultIntervalo = 0;
+int intervalo = 1000; 
+
+void setup() {
+  
+  pinMode(botao, INPUT);
+  pinMode(led, OUTPUT);
+ 
+  digitalWrite(led, LOW);
+}
+
+void loop() {
+  int reading = digitalRead(botao);
+  
+  if (reading != botaoClick) {
+    lastDebounceTime = millis();
+  }
+  
+  if ((millis() - lastDebounceTime) > debounceDelay) {
+    if (reading != estadoBotao) {
+      estadoBotao = reading;
+      
+      if (estadoBotao == HIGH) {
+        clicks++;
+      }
+    }
+  }
+  
+  if (clicks > 0 && (millis() - ultIntervalo >= intervalo)) {
+    for (int i = 0; i < clicks; i++) {
+      digitalWrite(led, HIGH);
+      delay(100); 
+      digitalWrite(led, LOW);
+      delay(100); 
+    }
+    
+    clicks = 0;
+    
+    ultIntervalo = millis();
+  }
+  
+  botaoClick = reading;
+}
+
+
+Ex. 8
+
+const int mov = 2;
+const int led = 13;
+
+bool estadoLed = false;
+
+unsigned long motionDetectedTime = 0;
+
+const unsigned long motionDuration = 5000; 
+
+void setup() {
+  pinMode(mov, INPUT);
+  pinMode(led, OUTPUT);
+
+  digitalWrite(led, LOW);
+}
+
+void loop() {
+  if (digitalRead(mov) == HIGH) {
+    digitalWrite(led, HIGH);
+    
+    motionDetectedTime = millis();
+    
+    estadoLed = true;
+  }
+
+  if (estadoLed && (millis() - motionDetectedTime >= motionDuration)) {
+    digitalWrite(led, LOW);
+    
+    estadoLed = false;
+  }
+}
+
+
+Ex.9 
+
+int botao1 = 4;
+int botao2 = 6;
+int led = 3;
+
+int estadoBotao1 = 0;
+int estadoBotao2 = 0;
+
+bool estadoLed = false;
+
+void setup() {
+
+pinMode(botao1, INPUT);
+pinMode(botao2, INPUT);
+pinMode(led, OUTPUT);
+  
+}
+
+void loop() {
+ 	
+  estadoBotao1 = digitalRead(botao1);
+  estadoBotao2 = digitalRead(botao2);
+  
+  if (estadoBotao1 == HIGH && estadoBotao2 == HIGH) {
+    
+    while (estadoBotao1 == HIGH && estadoBotao2 == HIGH) {
+      digitalWrite(led, HIGH); 
+      delay(1000);
+      digitalWrite(led, LOW); 
+      delay(1000);
+      
+      estadoBotao1 = digitalRead(botao1);
+      estadoBotao2 = digitalRead(botao2);
+    }
+} else {
+    if (estadoBotao1 == HIGH) {
+      digitalWrite(led, HIGH); 
+      estadoLed = true;
+    } else if (estadoBotao2 == HIGH) {
+      digitalWrite(led, LOW); 
+      estadoLed = false;
+    }
+  }
+}
+
+Ex.10
+
+int botao1 = 4;
+int botao2 = 6;
+int led = 3;
+
+int estadoBotao1 = 0;
+int estadoBotao2 = 0;
+
+void setup() {
+  pinMode(botao1, INPUT);
+  pinMode(botao2, INPUT); 
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  estadoBotao1 = digitalRead(botao1);
+  estadoBotao2 = digitalRead(botao2);
+  
+  if (estadoBotao1 == HIGH && estadoBotao2 == LOW) {
+    digitalWrite(led, HIGH);
+  } else if (estadoBotao1 == LOW && 2 == HIGH) {
+    digitalWrite(led, HIGH);
+  } else {
+    digitalWrite(led, LOW);
+  }
+}
+
+
+
