@@ -1,0 +1,39 @@
+int led = 3;
+int pot = A0;
+int brilho = 0;
+int fadeAmount = 5; 
+int potValor = 0;
+int mappedDelay = 0;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  pinMode(pot, INPUT);
+
+  Serial.begin(9600);
+}
+
+
+void loop() {
+  
+  potValor = analogRead(potPin);
+  
+  mappedDelay = map(potValor, 0, 1023, 1000, 4000); 
+  
+  
+  if (potValue == 0) {
+    digitalWrite(led, LOW);
+    delay(50); 
+    return; 
+  }
+
+  for (int brilho = 0; brilho <= 255; brilho += fadeAmount) {
+    analogWrite(led, brilho);
+    delay(mappedDelay / 255); 
+  }
+
+  
+  for (int brilho = 255; brilho >= 0; brilho -= fadeAmount) {
+    analogWrite(led, brilho);
+    delay(mappedDelay / 255); 
+  }
+}
