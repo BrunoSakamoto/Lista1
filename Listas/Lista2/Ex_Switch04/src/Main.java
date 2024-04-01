@@ -21,10 +21,12 @@ public class Main {
             case 1:
                 System.out.println("Débito selecionado");
                 System.out.println("Valor final da compra = " + (compra * 0.95) + "R$");
+                break;
 
             case 2:
                 System.out.println("PIX selecionado");
                 System.out.println("Valor final da compra = " + (compra * 0.9) + "R$");
+                break;
 
             case 3:
                 System.out.println("Crédito selecionado");
@@ -36,9 +38,8 @@ public class Main {
 
                 } else {
                     System.out.println("O valor final da compra é: "+ (compra+ compra * 0.05));
-
                 }
-
+                break;
         }
     }
 }
