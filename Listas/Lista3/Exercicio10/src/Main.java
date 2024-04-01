@@ -3,23 +3,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int N, N1, N2, aux;
 
-        N1 = 1;
-        N2 = 1;
+        System.out.print("Digite o número de termos da sequência Fibonacci: ");
+        int n = in.nextInt();
 
+        System.out.println("A sequência de Fibonacci até o termo " + n + " é:");
 
-        System.out.println("Digite o número de termos da sequência de Fibonacci:");
-        N = in.nextInt();
-        System.out.println(0);
+        int a = 0;
+        int b = 1;
 
-        while (N2 < N) {
-            System.out.println(N2);
-            aux = N1;
-            N1 = N2;
-            N2 = aux + N2;
-
-            }
+        for (int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            int temp = a;
+            a = b;
+            b = temp + b;
         }
-    }
 
+    }
+}

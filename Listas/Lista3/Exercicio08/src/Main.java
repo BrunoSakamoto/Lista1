@@ -22,8 +22,8 @@ public class Main {
             }
         }
         if (eprimo)
-            System.out.println("É primo");
+            System.out.println("É um primo");
         else
-            System.out.println("Não é primo");
+            System.out.println("Não é um primo");
     }
 }
