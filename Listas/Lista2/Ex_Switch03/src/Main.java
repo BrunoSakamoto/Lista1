@@ -19,6 +19,7 @@ public class Main {
                 double raio = in.nextDouble();
                 System.out.println("A área dess círculo é:" +(Math.pow(raio,2) * Math.PI));
                 System.out.println("O perímetro desse círculo é:" +(2 * Math.PI * raio));
+                break;
 
             case 2:
                 System.out.println("Informe a base do triângulo: ");
@@ -28,6 +29,7 @@ public class Main {
 
                 System.out.println("A área desse triângulo é: " +((base * altura) / 2));
                 System.out.println("O perímetro desse triângulo é " +(base + altura + (Math.sqrt(Math.pow(base,2) + Math.pow(altura,2)))));
+                break;
 
             case 3:
                 System.out.println("Informe a base do retângulo:");
@@ -37,7 +39,7 @@ public class Main {
 
                 System.out.println("A área desse retângulo é: " +(base_ret * altura_ret));
                 System.out.println("O perímetro desse retângulo é: " +((base_ret * 2) + (altura_ret * 2))) ;
-        }
-
+                break;
+       }
     }
 }

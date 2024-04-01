@@ -5,9 +5,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-
         System.out.println("Máquina de Café");
-        System.out.println("Insira o Dinheiro");
+        System.out.println("Insira o Dinheiro:");
         double din = in.nextDouble();
 
 
@@ -26,10 +25,8 @@ public class Main {
 
         switch (cafe) {
 
-
             case 1:
                 System.out.println("Café Expresso Selecionado");
-
 
                 if (din < 0.50) {
                     System.out.println("Dinheiro insuficiente!");
@@ -37,45 +34,43 @@ public class Main {
                     System.out.println("Seu troco: " + (din - 0.50));
                 } else {
                     System.out.println("Obrigado!");
-                    break;
                 }
+                break;
 
 
             case 2:
                 System.out.println("Café Longo Selecionado");
-
 
                 if (din < 1.0) {
                     System.out.println("Dinheiro insuficiente!");
                 } else if (din > 1.0) {
                     System.out.println("Seu troco: " + (din - 1.0));
                     System.out.println("Obrigado!");
-                    break;
                 }
+                break;
 
 
             case 3:
                 System.out.println("Capuccino Selecionado");
 
-
                 if (din < 2.50) {
                     System.out.println("Dinheiro insuficiente!");
-                } else if (din > 2.50)
+                } else if (din > 2.50) {
                     System.out.println("Seu troco: " + (din - 2.50));
+                }
                 break;
 
 
             case 4:
                 System.out.println("Chocolate Quente Selecionado");
 
-
                 if (din < 2.0) {
                     System.out.println("Dinheiro insuficiente!");
                 } else if (din > 2.0) {
                     System.out.println("Seu troco: " + (din - 2.0));
                     System.out.println("Obrigado!");
-                    break;
                 }
+                break;
         }
     }
 }
