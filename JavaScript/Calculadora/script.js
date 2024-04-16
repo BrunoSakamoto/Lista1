@@ -106,8 +106,8 @@
             ['-', 1],
             ['*', 2],
             ['/', 2],
-            ['(', 3],
-            [')', 3]
+            ['**', 3],
+            ['', 3]
         ]);
         return operators.get(op2) > operators.get(op1); 
     }
@@ -118,4 +118,41 @@
 
     function lenghtOfOperatorStack() {
         return operator_stack.length;
+    }
+
+    function addToExpression(entry) {
+        let history = document.getElementById("expression");
+        expression.innerText += entry + "\n";
+    }
+    
+    // Função para limpar o histórico da conta
+    function clearExpression() {
+        document.getElementById("expression").innerText = "";
+    }
+    
+    // Modificar a função calculate para adicionar a entrada no histórico antes de exibir o resultado
+    function calculate() {
+        addNumberToStack();
+        let result = 0;
+        while (lenghtOfOperatorStack() > 0) {
+            result = partialCalculate();
+            addResultToStack(result);
+        }
+        document.getElementById("display").value = result;
+        addToExpression("= " + result); // Adiciona o resultado ao histórico
+    }
+    
+    // Modificar a função operator para adicionar a operação ao histórico
+    function operator(value) {
+        if (!number_complete) {
+            addNumberToStack();
+            while (lenghtOfOperatorStack() > 0 && !precedence(topOfOperatorStack(), value)) {
+                let result = partialCalculate();
+                addResultToStack(result);
+            }
+        } else {
+            getOperatorFromStack(value);
+        }
+        addOperatorToStack(value);
+        addToExpression(value); // Adiciona a operação ao histórico
     }

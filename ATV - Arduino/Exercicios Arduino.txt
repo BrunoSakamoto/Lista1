@@ -1,0 +1,252 @@
+Exercicios Arduino
+
+Ex. 1
+int LedBuiltin = 3;
+
+void setup(){
+    
+    pinMode(LedBuiltin, OUTPUT);
+}
+
+void loop(){
+
+    digitalWrite(LedBuiltin, HIGH);
+  	delay(1000);
+	digitalWrite(LedBuiltin, LOW);
+    delay(1000);
+  	
+
+
+}
+
+Ex. 2
+int LedBuiltin = 3;
+
+void setup(){
+    
+    pinMode(LedBuiltin, OUTPUT);
+}
+
+void loop(){
+  
+  	analogWrite(LedBuiltin, 0);
+  	delay(750);
+    analogWrite(LedBuiltin, 30);
+  	delay(750);
+    analogWrite(LedBuiltin, 80);
+    delay(750);
+    analogWrite(LedBuiltin, 130);
+    delay(750);
+    analogWrite(LedBuiltin, 190);
+    delay(750);
+    analogWrite(LedBuiltin, 255);
+    delay(750);
+
+
+  
+}
+
+Ex. 3
+char cor;
+
+int red = 3;
+int green = 4;
+int yellow = 5;
+
+void setup() {
+Serial.begin(9600);
+
+pinMode(red, OUTPUT);
+pinMode(green, OUTPUT);
+pinMode(yellow,OUTPUT);
+
+}
+void loop() {
+while (Serial.available() > 0) {
+cor = Serial.read();
+  
+if (cor == 'r' || cor =='R'){
+digitalWrite(red, HIGH);
+digitalWrite(green, LOW);
+digitalWrite(yellow, LOW);
+}
+
+else if (cor == 'g' || cor =='G'){
+digitalWrite(red, LOW);
+digitalWrite(green, HIGH);
+digitalWrite(yellow, LOW);
+}
+
+else if (cor == 'y' || cor =='Y'){
+digitalWrite(red, LOW);
+digitalWrite(green, LOW);
+digitalWrite(yellow, HIGH);
+}
+Serial.println(cor);
+  }
+}
+
+Ex. 4
+int botao = 2;
+
+void setup(){
+
+ pinMode(botao, INPUT); 
+ Serial.begin(9600); 
+}
+
+void loop(){
+
+ if(digitalRead(botao)){
+ Serial.println("Botao Pressionado\n"); 
+ 
+ } else {
+ Serial.println("Botao nao pressionado\n"); 
+ }
+}
+
+Ex. 5
+int red = 8;
+int green = 9;
+int yellow = 10;
+
+int botao1 = 6;
+int botao2 = 7;
+
+void setup() {
+	pinMode(red, OUTPUT);
+  	pinMode(green, OUTPUT);
+  	pinMode(yellow, OUTPUT);
+  	pinMode(botao1, INPUT);
+  	pinMode(botao2, INPUT);
+}
+
+boolean valA = 0;
+
+boolean valB = 0;
+
+void setup() {
+
+pinMode(ledXOR, OUTPUT); 
+pinMode(ledOU, OUTPUT); 
+pinMode(ledE, OUTPUT);
+}
+
+void loop(){
+valA = digitalRead(botaoA); 
+valB = digitalRead(botaoB);
+
+digitalWrite(ledXOR, valA ^ valB);
+digitalWrite(ledOU, valA | valB); 
+digitalWrite(ledE, valA & valB); 
+}
+
+Ex. 6
+int poten = A0;
+int potValor; 
+void setup() {
+Serial.begin(9600); 
+}
+
+void loop() {
+potValor = analogRead(A0);
+Serial.print("Valor do Potenciometro = "); 
+Serial.println(potValor);
+}
+
+Ex. 7
+int poten = 0;
+int led = 9;
+int potValor = 0; 
+
+void setup() {
+pinMode(led,OUTPUT); 
+}
+void loop() {
+potVal = analogRead(poten); 
+esta ligado
+potVal = map(potVal,0,1023,0,255); 
+
+analogWrite(led,potVal);
+}
+
+Ex. 8
+#include <Thermistor.h>
+Thermistor temp(0);
+
+void setup() {
+Serial.begin(9600);
+}
+
+void loop() {
+int temp = temp.getTemp();
+Serial.print("Temperatura no Sensor eh: ");
+Serial.print(temp); Serial.println("°C");
+delay(1000);
+}
+
+Ex. 9
+int LDR = A0;
+int led = 8;
+float brilho; 
+float teste = 0; 
+
+void setup(){
+Serial.begin(9600); 
+pinMode(led, OUTPUT); 
+}
+
+void loop(){
+
+for(int i=0; i < 100 ; i++){
+brilho = analogRead(LDR); 
+
+brilho = (luminosidade / 1024) * 100; 
+porcentagem
+teeste = teste + brilho; 
+}
+
+teste = teste/100; 
+Serial.print("Luminosidade = "); 
+Serial.print(teste, 0); 
+Serial.println("%"); 
+if(teste < 30) {
+digitalWrite(led,HIGH); 
+
+} else {
+digitalWrite(led,LOW);
+}
+}
+
+Ex.10
+#include <Thermistor.h>
+
+int tempMax = 42;
+int tempMin = 24; 
+
+int sin = 3;
+Thermistor temp(0)
+
+void setup() {
+Serial.begin(9600);
+Serial.println("Alarme de temperatura");
+}
+
+void loop(){
+int temp = temp.getTemp();
+delay(2000); 
+if (temp > tempMin && temp < tempMax){
+noTone(sirene);
+
+} else {
+tone (sirene,440,1000);
+Serial.println("Limites de temperatura excedido.");
+Serial.print("O valor da temperatura deve estar entre ");
+Serial.print(tempMin);
+Serial.print(" e ");
+Serial.println(tempMax);
+}
+Serial.print("Temperatura: ");
+Serial.print(temp);
+Serial.println(" *C\n");
+}
