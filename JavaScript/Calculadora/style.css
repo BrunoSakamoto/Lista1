@@ -3,11 +3,6 @@ body {
     background-color: #f3f3f3;
 }
 
-.expression {
-    width: 300px;
-    
-}
-
 .calculator {
     width: 300px;
     margin: 50px auto;
@@ -15,6 +10,19 @@ body {
     border-radius: 10px;
     background-color: #282626;
     box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.1);
+}
+
+.history {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #737171;
+    color: #fff;
+    box-shadow: 0px 2px 5px rgba(255, 0, 0, 0.1);
+    text-align: right;
 }
 
 #display {
@@ -30,28 +38,10 @@ body {
     text-align: right;
 }
 
-#expression {
-    width: calc(100% - 20px);
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #737171;
-    color: #333;
-    box-shadow: 0px 2px 5px rgba(255, 0, 0, 0.1);
-    text-align: right;
-}
-
-
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5px;
-}
-
-.buttons span {
-    color: #fff;
 }
 
 button {
@@ -68,7 +58,7 @@ button:hover {
     background-color: #195a9c;
 }
 
-.Erase {
+.erase {
     color: red;
 }
 
@@ -78,6 +68,6 @@ button:hover {
     grid-column: span 2;
 }
 
-.symbol {
+.symbol, .operator {
     color: green;
 }
