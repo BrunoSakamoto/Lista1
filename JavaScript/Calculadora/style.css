@@ -3,6 +3,11 @@ body {
     background-color: #f3f3f3;
 }
 
+.back {
+    
+    float: left;
+    display: flex;
+}
 .calculator {
     width: 300px;
     margin: 50px auto;
@@ -71,3 +76,5 @@ button:hover {
 .symbol, .operator {
     color: green;
 }
+
+
